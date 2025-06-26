@@ -1,0 +1,138 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #222;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #5da35d;
+    font-weight: bold;
+}
+
+/* Hero */
+.hero {
+    background-image: url('../img/puntarenasEventos.png');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Noticias */
+.noticias {
+    padding: 30px 20px;
+}
+
+.noticia {
+    display: flex;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+}
+
+.noticia-img {
+    width: 200px;
+    height: 150px;
+    background-color: #b3e5fc;
+    background-image: url('imagen.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.noticia-contenido {
+    padding: 15px;
+    flex: 1;
+}
+
+.fecha {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.titulo {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #222;
+}
+
+.descripcion {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.iconos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconos-left, .iconos-right {
+    display: flex;
+    gap: 15px;
+}
+
+.iconos span {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #5da35d;
+}
+
+/* Footer */
+.footer {
+    background-color: #043c2e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
