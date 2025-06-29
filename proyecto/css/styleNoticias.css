@@ -71,3 +71,48 @@
     font-size: 1.2rem;
     color: #5da35d;
 }
+
+
+.iconos span {
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 5px;
+}
+
+.iconos span:hover {
+    transform: scale(1.2);
+}
+
+.iconos span.active {
+    color: gold; /* Para favoritos */
+}
+
+.iconos span.active.bi-heart {
+    color: red; /* Para corazones */
+}
+
+.contador {
+    font-size: 0.8em;
+    margin-left: 3px;
+}
+
+.noticia[data-oculta] {
+    opacity: 0.5;
+}
+
+/* Estilo para noticias ocultas */
+.noticia.oculta {
+    opacity: 0.5;
+    background-color: #f0f0f0;
+}
+
+/* Estilo para corazón */
+.iconos span.activo .bi-heart {
+    color: red !important;
+    fill: red !important;
+}
+
+/* Feedback visual para copiado */
+.icono-compartir.copiado {
+    color: #4CAF50;
+}
