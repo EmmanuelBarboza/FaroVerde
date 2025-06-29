@@ -1,192 +1,439 @@
+.hero {
+    background-image: url('../img/puntarenasEventos.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    display: flex; /* Para centrar contenido verticalmente */
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; /* Altura mínima para el hero */
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f1f1f1;
-            margin: 0;
-            padding: 0;
-        }
+.hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejor legibilidad */
+}
 
-        header {
-            background-color: #1a5d36;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 30px;
-            align-items: center;
-        }
+/* --- Eventos Disponibles Container --- */
+.eventos-disponibles {
+    background-color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    min-height: 200px; /* Para asegurar que el contenedor no se colapse al cargar */
+}
 
-        .logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
+/* --- Estilos para la Tarjeta de Evento (evento-card) --- */
+.evento-card {
+    background-color: #f9f9f9;
+    border-radius: 12px; /* Bordes más suaves */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    padding: 25px;
+    width: calc(33.333% - 25px); /* Tres columnas con gap */
+    min-width: 280px; /* Mínimo para móviles */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición al hover */
+}
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-        }
+.evento-card:hover {
+    transform: translateY(-5px); /* Ligeramente hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más grande */
+}
 
-        .hero {
-            background-image: url('../img/puntarenasEventos.png'); 
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+.evento-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Separador sutil */
+    padding-bottom: 10px;
+}
 
-        .hero h1 {
-            font-size: 36px;
-            font-weight: 700;
-        }
+.evento-header h3 {
+    font-size: 22px;
+    color: #1a5d36;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
 
-        .eventos-disponibles {
-            background-color: white;
-            padding: 40px 20px;
-        }
+.evento-date {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
-        .evento {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.evento-date i {
+    color: #1a5d36;
+}
 
-        .evento h2 {
-            font-size: 24px;
-            color: #1a5d36;
-            margin: 0 0 10px 0;
-        }
+.evento-body {
+    flex-grow: 1; /* Permite que el cuerpo ocupe el espacio restante */
+    margin-bottom: 20px; /* Espacio antes del botón de contacto */
+}
 
-        .evento p {
-            font-size: 14px;
-            color: #333;
-        }
+.evento-location {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
-        .participar-btn {
-            background-color: #1a5d36;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.evento-location i {
+    color: #1a5d36;
+}
 
-        .participar-btn:hover {
-            background-color: #135a29;
-        }
+.evento-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
 
-        .organiza-evento {
-            background-color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 2px solid #ccc;
-        }
+.evento-contacto {
+    text-align: center; /* Centra el botón de contacto */
+    margin-top: auto; /* Empuja al final si flex-grow en .evento-body */
+}
 
-        .organiza-evento h2 {
-            color: #1a5d36;
-            font-size: 28px;
-        }
+.btn-contacto {
+    background-color: #1a5d36;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none; /* Quitar subrayado del enlace */
+    display: inline-flex; /* Para alinear ícono y texto */
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-        .organiza-evento form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            justify-items: stretch;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.btn-contacto:hover {
+    background-color: #135a29;
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
 
-        .organiza-evento label {
-            color: #333;
-            font-size: 14px;
-        }
+/* --- Mensajes de estado (Cargando, No Eventos, Error) --- */
+.loading, .no-eventos, .error {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 1.2em;
+    color: #666;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    box-sizing: border-box;
+}
 
-        .organiza-evento input, .organiza-evento textarea {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-        }
+.loading i, .no-eventos i, .error i {
+    font-size: 3em;
+    color: #1a5d36;
+    margin-bottom: 20px;
+    display: block;
+}
 
-        .organiza-evento button {
-            background-color: #1a5d36;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+.no-eventos h3, .error h3 {
+    color: #1a5d36;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
 
-        .organiza-evento button:hover {
-            background-color: #135a29;
-        }
+.btn-reintentar {
+    background-color: #007bff; /* Un color diferente para el botón de reintentar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
 
-        .footer {
-            background-color: #1a5d36;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
+.btn-reintentar:hover {
+    background-color: #0056b3;
+}
 
-        .footer .footer-nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
+/* --- Sección "Organiza tu Evento" --- */
+.organiza-evento {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0; /* Un borde más suave */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05); /* Sombra superior */
+}
 
-        .modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 400px;
-            text-align: left;
-        }
+.organiza-evento h2 {
+    color: #1a5d36;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
 
-        .modal-content .close-btn {
-            background: none;
-            border: none;
-            color: #333;
-            font-size: 24px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
+.organiza-evento form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Más espacio entre campos */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
 
-        .modal-content form {
-            display: flex;
-            flex-direction: column;
-        }
+.organiza-evento label {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 500;
+}
 
-        .modal-content input, .modal-content textarea {
-            margin: 10px 0;
-        }
+.organiza-evento input,
+.organiza-evento textarea {
+    padding: 12px; /* Más padding para campos más grandes */
+    border-radius: 8px; /* Bordes más redondeados */
+    border: 1px solid #ccc;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px; /* Menos margen si el label ya tiene margen-bottom */
+}
 
-        .modal-content button {
-            background-color: #1a5d36;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-        }
- 
+.organiza-evento textarea {
+    grid-column: 1 / -1;
+    height: 120px;
+    resize: vertical;
+}
+
+.organiza-evento button[type="submit"] {
+    background-color: #1a5d36;
+    color: white;
+    padding: 15px; /* Más padding para el botón */
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px; /* Más espacio antes del botón */
+    grid-column: 1 / -1;
+    font-size: 1.1em;
+}
+
+.organiza-evento button[type="submit"]:hover {
+    background-color: #135a29;
+    transform: translateY(-2px);
+}
+
+/* --- Modales (Participar y Ver Detalles) --- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px; /* Ancho fijo para modales */
+    max-width: 90%;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.modal-content .close-btn {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 32px; /* Ícono de cierre más grande */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-content .close-btn:hover {
+    color: #1a5d36;
+}
+
+.modal-content h3, .modal-content h2 {
+    color: #1a5d36;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.modal-content p strong {
+    color: #1a5d36;
+}
+
+.modal-content p i {
+    margin-right: 8px;
+    color: #1a5d36;
+}
+
+/* Estilos específicos para el botón "Participar" dentro del modal de detalles */
+.modal-content .participar-btn {
+    background-color: #1a5d36; /* Color consistente */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: block; /* Ocupa todo el ancho */
+    width: 100%; /* Asegura que el botón ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding en el width */
+    margin-top: 25px; /* Espacio superior */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content .participar-btn:hover {
+    background-color: #135a29;
+    transform: translateY(-2px);
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.modal-content input,
+.modal-content textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin: 8px 0 15px 0; /* Espacio entre campos */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #1a5d36;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #135a29;
+    transform: translateY(-2px);
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 992px) {
+    .evento-card {
+        width: calc(50% - 25px); /* Dos columnas en tabletas */
+    }
+}
+
+@media (max-width: 768px) {
+    header, .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+    }
+    .nav-links, .footer-nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-links a, .footer-nav a {
+        margin: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .organiza-evento form {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        max-width: 500px;
+    }
+
+    .organiza-evento textarea,
+    .organiza-evento button[type="submit"] {
+        grid-column: 1 / 1;
+    }
+
+    .evento-card {
+        width: 100%; /* Una columna en móviles */
+    }
+    
+    .modal-content {
+        width: 95%; /* Más ancho en móviles */
+        padding: 20px;
+    }
+
+    .modal-content h3, .modal-content h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 15px;
+    }
+    .hero h1 {
+        font-size: 24px;
+    }
+    .eventos-disponibles, .organiza-evento, .footer {
+        padding: 20px 15px;
+    }
+    .evento-card {
+        padding: 20px;
+    }
+    .evento-header h3 {
+        font-size: 20px;
+    }
+    .btn-contacto, .btn-reintentar, .modal-content button {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+    .modal-content .close-btn {
+        font-size: 28px;
+        top: 10px;
+        right: 10px;
+    }
+}

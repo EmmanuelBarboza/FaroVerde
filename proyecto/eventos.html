@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos - Faro Verde</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styleEventos.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-    <script src="js/components.js"></script>
 </head>
 <body>
-
-    <header id="header-js"></header>
-
     <section class="hero">
         <div class="hero-content">
             <h1>Eventos Disponibles</h1>
@@ -20,19 +18,12 @@
     </section>
 
     <section class="eventos-disponibles" id="eventos">
-        <div class="evento">
-            <h2>Título del Evento</h2>
-            <p>Fecha: 00/00/00 | Hora: 00:00</p>
-            <p>Descripción del evento: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-            <button class="participar-btn" onclick="openModal()">Participar</button>
-        </div>
-        <!-- Agrega más eventos similares -->
+        <!-- Los eventos se cargarán aquí automáticamente -->
     </section>
 
-    <section class="organiza-evento">
+     <section class="organiza-evento">
         <h2>¿Te gustaría organizar tu propio evento?</h2>
-        <form>
-            <label for="nombre-evento">Nombre del evento</label>
+        <form id="formOrganizarEvento"> <label for="nombre-evento">Nombre del evento</label>
             <input type="text" id="nombre-evento" placeholder="Agrega el nombre del evento">
             <label for="lugar-evento">Lugar del Evento</label>
             <input type="text" id="lugar-evento" placeholder="Agrega el lugar donde se realizará el evento">
@@ -42,44 +33,73 @@
             <textarea id="descripcion-evento" placeholder="Escribe todo lo referente a la actividad"></textarea>
             <label for="correo-evento">Correo Electrónico</label>
             <input type="email" id="correo-evento" placeholder="ejemplo@gmail.com">
-            <button type="submit">Publicar</button>
-        </form>
+            <button type="submit">Enviar</button> </form>
     </section>
 
-    <div id="participarModal" class="modal">
+    <div id="eventoModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3>Formulario de Participación</h3>
-            <form>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" placeholder="Digite tu nombre">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" placeholder="0000 0000">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="ejemplo@gmail.com">
-                <label for="mensaje">Escríbenos</label>
-                <textarea id="mensaje" placeholder="¿Por qué deseas participar?"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p><strong><i class="fas fa-map-marker-alt"></i> Lugar:</strong> <span id="modalPlace"></span></p>
+            <p><strong><i class="fas fa-calendar-alt"></i> Fecha:</strong> <span id="modalDate"></span></p>
+            <p><strong><i class="fas fa-info-circle"></i> Descripción:</strong> <span id="modalDesc"></span></p>
+            <p><strong><i class="fas fa-envelope"></i> Contacto:</strong> <span id="modalEmail"></span></p>
         </div>
     </div>
 
     <footer class="footer" id="footer-js"></footer>
 
+    <script src="js/funciones.js"></script>
     <script>
+        // Manejo básico de modales
         function openModal() {
             document.getElementById('participarModal').style.display = "flex";
         }
 
         function closeModal() {
             document.getElementById('participarModal').style.display = "none";
+            document.getElementById('eventoModal').style.display = "none";
         }
 
         window.onclick = function(event) {
-            if (event.target == document.getElementById('participarModal')) {
+            if (event.target.classList.contains('modal')) {
                 closeModal();
             }
         }
+
+          document.getElementById('formOrganizarEvento').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previene el envío tradicional del formulario
+
+            const nombreEvento = document.getElementById('nombre-evento').value;
+            const lugarEvento = document.getElementById('lugar-evento').value;
+            const fechaEvento = document.getElementById('fecha-evento').value;
+            const descripcionEvento = document.getElementById('descripcion-evento').value;
+            const correoRemitente = document.getElementById('correo-evento').value; // Este es el correo de quien organiza el evento, no el destino.
+
+            // Puedes definir a qué correo se enviará el evento de Faro Verde
+            const correoDestino = "info@faroverde.com"; // **¡IMPORTANTE! Cambia esto al correo real de Faro Verde**
+            const asunto = `Propuesta de Evento: ${nombreEvento}`;
+            
+            const cuerpoCorreo = `
+            Nombre del Evento: ${nombreEvento}
+            Lugar del Evento: ${lugarEvento}
+            Fecha del Evento: ${fechaEvento}
+            Descripción:
+            ${descripcionEvento}
+
+            Correo de Contacto del Organizador: ${correoRemitente}
+            `.trim(); // .trim() para eliminar espacios en blanco extra al inicio/final
+
+            // Codifica el cuerpo del correo para que funcione correctamente en el mailto
+            const cuerpoCodificado = encodeURIComponent(cuerpoCorreo);
+
+            // Construye el URL mailto
+            const mailtoLink = `mailto:${correoDestino}?subject=${encodeURIComponent(asunto)}&body=${cuerpoCodificado}`;
+
+            // Redirige al cliente de correo
+            window.location.href = mailtoLink;
+        });
     </script>
+    <script src="/proyecto/js/components.js"></script>
 </body>
 </html>

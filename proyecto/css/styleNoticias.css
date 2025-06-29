@@ -1,41 +1,3 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff;
-    color: #222;
-}
-
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 50px;
-    margin-right: 10px;
-}
-
-.nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #5da35d;
-    font-weight: bold;
-}
-
 /* Hero */
 .hero {
     background-image: url('../img/puntarenasEventos.png');
@@ -108,31 +70,4 @@ body {
     cursor: pointer;
     font-size: 1.2rem;
     color: #5da35d;
-}
-
-/* Footer */
-.footer {
-    background-color: #043c2e;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-}
-
-.footer-logo img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.footer-links a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    font-size: 0.9rem;
 }
