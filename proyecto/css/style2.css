@@ -90,9 +90,14 @@
         .hero-content {
             position: relative; /* To bring content above the overlay */
             z-index: 1;
-            max-width: 800px;
             margin: 0 auto;
+            background-color: #00000047;
         }
+
+        .hero-text {
+            max-width: 880px;
+        }
+
 
         .hero h1 {
             font-size: 48px;
