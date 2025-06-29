@@ -100,6 +100,8 @@ async function cargarNoticias() {
         container.innerHTML = '<p>Error al cargar noticias. Intenta más tarde.</p>';
     }
 
+    
+
     // Funcionalidad para los iconos
 document.querySelectorAll('.noticia').forEach(noticia => {
 
