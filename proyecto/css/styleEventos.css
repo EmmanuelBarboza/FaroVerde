@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .hero {
     background-image: url('../img/puntarenasEventos.png');
     background-size: cover;
@@ -208,6 +209,263 @@
     margin-bottom: 5px; /* Menos margen si el label ya tiene margen-bottom */
 }
 
+=======
+/* --- Base y Reestablecimientos --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Color de texto base */
+}
+
+/* --- Header y Navegación (si se generan estáticamente o se incluye en funciones.js) --- */
+header {
+    background-color: #1a5d36;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sutil sombra para el header */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #c7f2c2; /* Un tono más claro al pasar el ratón */
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-image: url('../img/puntarenasEventos.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    display: flex; /* Para centrar contenido verticalmente */
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; /* Altura mínima para el hero */
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejor legibilidad */
+}
+
+/* --- Eventos Disponibles Container --- */
+.eventos-disponibles {
+    background-color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    min-height: 200px; /* Para asegurar que el contenedor no se colapse al cargar */
+}
+
+/* --- Estilos para la Tarjeta de Evento (evento-card) --- */
+.evento-card {
+    background-color: #f9f9f9;
+    border-radius: 12px; /* Bordes más suaves */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    padding: 25px;
+    width: calc(33.333% - 25px); /* Tres columnas con gap */
+    min-width: 280px; /* Mínimo para móviles */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición al hover */
+}
+
+.evento-card:hover {
+    transform: translateY(-5px); /* Ligeramente hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más grande */
+}
+
+.evento-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Separador sutil */
+    padding-bottom: 10px;
+}
+
+.evento-header h3 {
+    font-size: 22px;
+    color: #1a5d36;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.evento-date {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.evento-date i {
+    color: #1a5d36;
+}
+
+.evento-body {
+    flex-grow: 1; /* Permite que el cuerpo ocupe el espacio restante */
+    margin-bottom: 20px; /* Espacio antes del botón de contacto */
+}
+
+.evento-location {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.evento-location i {
+    color: #1a5d36;
+}
+
+.evento-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.evento-contacto {
+    text-align: center; /* Centra el botón de contacto */
+    margin-top: auto; /* Empuja al final si flex-grow en .evento-body */
+}
+
+.btn-contacto {
+    background-color: #1a5d36;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none; /* Quitar subrayado del enlace */
+    display: inline-flex; /* Para alinear ícono y texto */
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-contacto:hover {
+    background-color: #135a29;
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+/* --- Mensajes de estado (Cargando, No Eventos, Error) --- */
+.loading, .no-eventos, .error {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 1.2em;
+    color: #666;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    box-sizing: border-box;
+}
+
+.loading i, .no-eventos i, .error i {
+    font-size: 3em;
+    color: #1a5d36;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.no-eventos h3, .error h3 {
+    color: #1a5d36;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.btn-reintentar {
+    background-color: #007bff; /* Un color diferente para el botón de reintentar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reintentar:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Sección "Organiza tu Evento" --- */
+.organiza-evento {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0; /* Un borde más suave */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05); /* Sombra superior */
+}
+
+.organiza-evento h2 {
+    color: #1a5d36;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.organiza-evento form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Más espacio entre campos */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.organiza-evento label {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 500;
+}
+
+.organiza-evento input,
+.organiza-evento textarea {
+    padding: 12px; /* Más padding para campos más grandes */
+    border-radius: 8px; /* Bordes más redondeados */
+    border: 1px solid #ccc;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px; /* Menos margen si el label ya tiene margen-bottom */
+}
+
+>>>>>>> 6c2ff2d23a815ece76bc3e61624c88d9ce9829db
 .organiza-evento textarea {
     grid-column: 1 / -1;
     height: 120px;
@@ -358,6 +616,42 @@
     transform: translateY(-2px);
 }
 
+<<<<<<< HEAD
+=======
+/* --- Footer --- */
+.footer {
+    background-color: #1a5d36;
+    color: white;
+    padding: 20px 30px; /* Más padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Sombra para el footer */
+}
+
+.footer .left-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer .left-content img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #c7f2c2;
+}
+
+>>>>>>> 6c2ff2d23a815ece76bc3e61624c88d9ce9829db
 /* --- Media Queries para Responsividad --- */
 @media (max-width: 992px) {
     .evento-card {
