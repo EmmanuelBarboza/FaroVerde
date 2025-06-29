@@ -21,13 +21,5 @@ document.getElementById("footer-js").innerHTML = `
 `;
 
 
-        // <div class="footer-logo">
-        //     <img src="img/logo.png" alt="Logo Faro Verde" />
-        //     <p>©Faro Verde</p>
-        // </div>
-        // <div class="footer-links">
-        //     <a href="#">Noticias</a>
-        //     <a href="#">Eventos</a>
-        //     <a href="#">Sobre Nosotros</a>
-        // </div>
+    
     
