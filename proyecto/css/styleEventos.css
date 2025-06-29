@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .hero {
     background-image: url('../img/puntarenasEventos.png');
     background-size: cover;
@@ -209,7 +209,7 @@
     margin-bottom: 5px; /* Menos margen si el label ya tiene margen-bottom */
 }
 
-=======
+
 /* --- Base y Reestablecimientos --- */
 body {
     font-family: 'Poppins', sans-serif;
@@ -465,7 +465,6 @@ header {
     margin-bottom: 5px; /* Menos margen si el label ya tiene margen-bottom */
 }
 
->>>>>>> 6c2ff2d23a815ece76bc3e61624c88d9ce9829db
 .organiza-evento textarea {
     grid-column: 1 / -1;
     height: 120px;
@@ -616,42 +615,6 @@ header {
     transform: translateY(-2px);
 }
 
-<<<<<<< HEAD
-=======
-/* --- Footer --- */
-.footer {
-    background-color: #1a5d36;
-    color: white;
-    padding: 20px 30px; /* Más padding */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Sombra para el footer */
-}
-
-.footer .left-content {
-    display: flex;
-    align-items: center;
-}
-
-.footer .left-content img {
-    height: 30px;
-    margin-right: 10px;
-}
-
-.footer-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-    color: #c7f2c2;
-}
-
->>>>>>> 6c2ff2d23a815ece76bc3e61624c88d9ce9829db
 /* --- Media Queries para Responsividad --- */
 @media (max-width: 992px) {
     .evento-card {
