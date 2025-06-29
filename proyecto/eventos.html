@@ -52,7 +52,6 @@
 
     <script src="js/funciones.js"></script>
     <script>
-        // Manejo básico de modales
         function openModal() {
             document.getElementById('participarModal').style.display = "flex";
         }
@@ -69,16 +68,15 @@
         }
 
           document.getElementById('formOrganizarEvento').addEventListener('submit', function(event) {
-            event.preventDefault(); // Previene el envío tradicional del formulario
+            event.preventDefault(); 
 
             const nombreEvento = document.getElementById('nombre-evento').value;
             const lugarEvento = document.getElementById('lugar-evento').value;
             const fechaEvento = document.getElementById('fecha-evento').value;
             const descripcionEvento = document.getElementById('descripcion-evento').value;
-            const correoRemitente = document.getElementById('correo-evento').value; // Este es el correo de quien organiza el evento, no el destino.
-
-            // Puedes definir a qué correo se enviará el evento de Faro Verde
-            const correoDestino = "info@faroverde.com"; // **¡IMPORTANTE! Cambia esto al correo real de Faro Verde**
+            const correoRemitente = document.getElementById('correo-evento').value; 
+           
+            const correoDestino = "jefferson.moraga@ucr.ac.cr"; 
             const asunto = `Propuesta de Evento: ${nombreEvento}`;
             
             const cuerpoCorreo = `
@@ -89,18 +87,17 @@
             ${descripcionEvento}
 
             Correo de Contacto del Organizador: ${correoRemitente}
-            `.trim(); // .trim() para eliminar espacios en blanco extra al inicio/final
+            `.trim();
 
-            // Codifica el cuerpo del correo para que funcione correctamente en el mailto
             const cuerpoCodificado = encodeURIComponent(cuerpoCorreo);
 
-            // Construye el URL mailto
+           
             const mailtoLink = `mailto:${correoDestino}?subject=${encodeURIComponent(asunto)}&body=${cuerpoCodificado}`;
 
-            // Redirige al cliente de correo
+            
             window.location.href = mailtoLink;
         });
     </script>
-    <script src="/proyecto/js/components.js"></script>
+    <script src="js/components.js"></script>
 </body>
 </html>
